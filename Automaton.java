@@ -47,17 +47,22 @@ public class Automaton
     //Question 28
     // Question 31(updated version)
     //Question 32
+    //Question 34
     public void update()
     {
+        // Extend the array by one element (set to 0)
+        int[] extendedState = new int[state.length + 1];
+        System.arraycopy(state, 0, extendedState, 0, state.length);
+        
         // Build the new state in a separate array.
         int[] nextState = new int[state.length];
         // Naively update the state of each cell
         // based on the state of its two neighbors.
         int left = 0;
-        int center = state[0];
+        int center = extendedState[0];
         for(int i = 0; i < state.length; i++) {
-            int right = (i+1 < state.length) ? state[i + 1] : 0;
-            nextState[i] = calculateNextState(left,center,right);
+            int right = extendedState[i + 1];
+            nextState[i] = (left + center + right) % 2;
             left = center;
             center = right;
         }

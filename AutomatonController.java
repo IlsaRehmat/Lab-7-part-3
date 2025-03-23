@@ -41,7 +41,17 @@
  * Modifying state directly would cause errors, so creating a new array 
  * is the safest solution.
  * 
- * Question 31
+ * Question 33
+ * Given the three binary values for the neighbors (left, center, right),
+ * there are 8 possible combinations of these three values 
+ * (since each can be either 0 or 1). 
+ * Each combination can result in either a 0 or 1 for the next state.
+ * Thus, there are 8 possible combinations of left, center, and right, 
+ * and for each combination, you can choose one of two states (0 or 1). 
+ * This gives 256 unique possible rules (since `2^8 = 256.
+ * 
+ * Question 34
+ * 
  * 
  * 
  * 
