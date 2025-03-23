@@ -26,7 +26,23 @@
  * Question 27
  * I did not understand.
  * 
- * Question 28
+ * Question 29
+ * A new nextState array is used to store the next iteration's state 
+ * without altering the current state while it’s being processed. 
+ * If you modify the state array directly, you risk using updated values 
+ * in the same iteration, leading to incorrect behavior.
+ * 
+ * Question 30
+ * We use nextState to avoid overwriting the state array while updating it.
+ * If we modify state directly, we might change values that are still
+ * needed for calculating the next cells, leading to incorrect results.
+ * Using nextState ensures we always use the original values
+ * for calculations and then update the state array at the end.
+ * Modifying state directly would cause errors, so creating a new array 
+ * is the safest solution.
+ * 
+ * Question 31
+ * 
  * 
  * 
  */
